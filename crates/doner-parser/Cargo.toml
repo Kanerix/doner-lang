@@ -1,0 +1,9 @@
+[package]
+name = "doner-parser"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+doner-lexer = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }

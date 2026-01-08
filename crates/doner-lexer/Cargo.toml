@@ -1,0 +1,7 @@
+[package]
+name = "doner-lexer"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+thiserror = { workspace = true }
