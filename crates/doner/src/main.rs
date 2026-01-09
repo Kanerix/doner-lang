@@ -5,9 +5,9 @@ use clap_cargo::style::CLAP_STYLING;
 use tracing_subscriber::EnvFilter;
 
 mod error;
-mod eval;
+mod run;
 
-#[derive(Parser)]
+#[derive(clap::Parser)]
 #[command(
     name = "doner",
     about = "A command-line interface for döner lang",
@@ -32,7 +32,7 @@ struct Cli {
 #[command(next_help_heading = "Commands", next_display_order = 2)]
 enum Commands {
     /// Run a döner lang file
-    Run(eval::RunArgs),
+    Run(run::RunArgs),
     /// Show the version of the CLI
     Version,
 }
@@ -89,7 +89,7 @@ async fn main() -> miette::Result<()> {
     }
 
     let result = match cli.command {
-        Commands::Run(run_args) => eval::eval(run_args, cli.global_args).await,
+        Commands::Run(run_args) => run::run(run_args, cli.global_args).await,
         Commands::Version => todo!(),
     };
 

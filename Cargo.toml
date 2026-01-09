@@ -14,6 +14,7 @@ authors = ["Kasper Jønsson <kas@lerpz.com>"]
 
 [workspace.dependencies]
 # Internal dependencies
+doner-eval = { path = "./crates/doner-eval" }
 doner-lexer = { path = "./crates/doner-lexer" }
 doner-parser = { path = "./crates/doner-parser" }
 # Other dependencies

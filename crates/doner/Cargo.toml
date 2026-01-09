@@ -4,6 +4,7 @@ version.workspace = true
 edition.workspace = true
 
 [dependencies]
+doner-eval = { workspace = true }
 doner-lexer = { workspace = true }
 doner-parser = { workspace = true }
 anyhow = { workspace = true }

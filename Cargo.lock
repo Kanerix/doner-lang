@@ -187,6 +187,7 @@ dependencies = [
  "anyhow",
  "clap",
  "clap-cargo",
+ "doner-eval",
  "doner-lexer",
  "doner-parser",
  "miette",
@@ -194,6 +195,14 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "doner-eval"
+version = "0.1.0"
+dependencies = [
+ "doner-parser",
+ "thiserror",
 ]
 
 [[package]]
