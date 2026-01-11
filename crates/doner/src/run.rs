@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-// use doner_eval::eval;
+use doner_eval::eval;
 use doner_lexer::lex;
 use doner_parser::parse;
 use tokio::fs::File;
@@ -26,10 +26,9 @@ pub async fn run(run: RunArgs, _global_args: Box<GlobalArgs>) -> error::Result<(
     let mut lines = buf.lines();
 
     while let Some(line) = lines.next() {
-        let lex = lex(&line)?;
-        let ast = parse(&lex)?;
-        println!("{:?}", ast);
-        // let result = eval(ast)?;
+        let lex = lex(line)?;
+        let ast = parse(lex)?;
+        let _result = eval(ast)?;
     }
 
     Ok(())

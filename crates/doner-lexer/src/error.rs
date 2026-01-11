@@ -8,9 +8,11 @@ pub type Result<T> = std::result::Result<T, Error>;
 #[derive(thiserror::Error, Debug)]
 pub enum Error {
     #[error("unknown token error '{0}'!")]
-	UnknownToken(char),
-	#[error("invalid integer literal '{0}'!")]
-	InvalidIntLiteral(String),
-	#[error("invalid integer literal '{0}'!")]
-	UnknownTokenSequence(String),
+    UnknownToken(char),
+    #[error("invalid integer literal '{0}'!")]
+    InvalidIntLiteral(String),
+    #[error("invalid integer literal '{0}'!")]
+    UnknownTokenSequence(String),
+    #[error("got unexpected EoF!")]
+    UnexpectedEoF,
 }
