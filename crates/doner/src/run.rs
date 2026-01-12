@@ -28,7 +28,7 @@ pub async fn run(run: RunArgs, _global_args: Box<GlobalArgs>) -> error::Result<(
     while let Some(line) = lines.next() {
         let lex = lex(line)?;
         let ast = parse(lex)?;
-        let _result = eval(ast)?;
+        let _ = eval(ast)?;
     }
 
     Ok(())

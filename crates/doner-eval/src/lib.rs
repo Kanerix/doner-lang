@@ -7,7 +7,7 @@ use doner_parser::{BinaryOp, Expr, Program, Stmt};
 pub fn eval(ast: Program) -> Result<i64> {
     let mut stmts = ast.statements.iter();
     while let Some(stmt) = stmts.next() {
-        let _ = eval_stmt(stmt.clone());
+        eval_stmt(stmt.clone());
     }
     Ok(0)
 }

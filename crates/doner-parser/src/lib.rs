@@ -29,10 +29,6 @@ pub fn parse(tokens: TokenStream) -> Result<Program> {
 }
 
 /// Lightweight parser over a `TokenStream`.
-///
-/// This type owns the token stream and provides simple `peek`/`next`
-/// operations plus a small `expect` helper, so we don't need to mix
-/// in the standard iterator/peekable abstractions.
 pub struct Parser {
     tokens: TokenStream,
     pos: usize,
