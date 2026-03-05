@@ -11,8 +11,8 @@ pub type Result<T> = std::result::Result<T, Error>;
 pub enum Error {
     #[error("parser error: {0}")]
     ParseError(String),
-    #[error("unexpected token error {0:?}")]
-    UnexpectedTokenError(TokenKind),
-    #[error("got unexpected EoF!")]
+    #[error("unexpected token error \"{0:?}\"!")]
+    UnexpectedToken(TokenKind),
+    #[error("got unexpected end-of-file!")]
     UnexpectedEoF,
 }

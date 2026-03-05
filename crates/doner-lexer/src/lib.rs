@@ -26,6 +26,14 @@ pub fn lex(input: &str) -> Result<TokenStream> {
                 let _ = chars.next();
                 TokenKind::Minus
             }
+            '*' => {
+                let _ = chars.next();
+                TokenKind::Star
+            }
+            '/' => {
+                let _ = chars.next();
+                TokenKind::Slash
+            }
             '(' => {
                 let _ = chars.next();
                 TokenKind::LParen

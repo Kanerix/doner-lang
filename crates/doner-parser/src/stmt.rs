@@ -24,7 +24,7 @@ fn parse_print_stmt(parser: &mut Parser) -> Result<Stmt> {
     let _ = parser.next();
 
     parser.expect(TokenKind::LParen)?;
-    let value = parse_expr(parser)?;
+    let value = parse_expr(parser, 0)?;
     parser.expect(TokenKind::RParen)?;
     parser.expect(TokenKind::SemiColon)?;
 
@@ -33,7 +33,7 @@ fn parse_print_stmt(parser: &mut Parser) -> Result<Stmt> {
 
 /// Parse an expression statement
 fn parse_expr_stmt(parser: &mut Parser) -> Result<Stmt> {
-    let expr = parse_expr(parser)?;
+    let expr = parse_expr(parser, 0)?;
     parser.expect(TokenKind::SemiColon)?;
     Ok(Stmt::Expr(expr))
 }

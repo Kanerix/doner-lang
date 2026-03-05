@@ -24,9 +24,12 @@ pub fn eval_stmt(stmt: Stmt) {
 pub fn eval_expr(expr: Expr) -> i64 {
     match expr {
         Expr::Int(i) => i,
+        Expr::UnaryNeg(expr) => -eval_expr(*expr),
         Expr::Binary { left, op, right } => match op {
             BinaryOp::Add => eval_expr(*left) + eval_expr(*right),
             BinaryOp::Sub => eval_expr(*left) - eval_expr(*right),
+            BinaryOp::Div => eval_expr(*left) / eval_expr(*right),
+            BinaryOp::Mul => eval_expr(*left) * eval_expr(*right),
         },
     }
 }
