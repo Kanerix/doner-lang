@@ -1,2 +1,2 @@
 let kebab = 10 - 5 + 2;
-print(kebab);
+serve(kebab);

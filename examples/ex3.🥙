@@ -1,0 +1,9 @@
+set kebab to 5;
+
+while kebab is less than or equal to 10 then
+    serve "i am hungry"
+
+set durum to 5 + kebab;
+
+for each i in 0 to durum then
+    serve i + "each"
