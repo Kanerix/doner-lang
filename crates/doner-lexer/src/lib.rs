@@ -72,7 +72,7 @@ pub fn lex_int(chars: &mut CharStream) -> Result<TokenKind> {
     }
 
     let int_val = int_str
-        .parse::<i64>()
+        .parse::<f64>()
         .map_err(|_| Error::InvalidIntLiteral(int_str.clone()))?;
 
     Ok(TokenKind::Int(int_val))

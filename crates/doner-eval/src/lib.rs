@@ -1,6 +1,6 @@
 pub mod error;
 
-pub use crate::error::Result;
+pub use crate::error::*;
 
 use doner_parser::{BinaryOp, Expr, Program, Stmt};
 
@@ -21,7 +21,7 @@ pub fn eval_stmt(stmt: Stmt) {
     }
 }
 
-pub fn eval_expr(expr: Expr) -> i64 {
+pub fn eval_expr(expr: Expr) -> f64 {
     match expr {
         Expr::Int(i) => i,
         Expr::UnaryNeg(expr) => -eval_expr(*expr),

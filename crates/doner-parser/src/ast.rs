@@ -15,7 +15,7 @@ pub enum Stmt {
 
 #[derive(Debug, Clone)]
 pub enum Expr {
-    Int(i64),
+    Int(f64),
     UnaryNeg(Box<Expr>),
     Binary {
         op: BinaryOp,

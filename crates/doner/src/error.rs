@@ -27,6 +27,13 @@ pub(crate) enum ErrorKind {
     /// Something is wrong with the command arguments.
     #[error(transparent)]
     #[diagnostic(
+        code(command::eval_error),
+        help("Something wen't wrong when evaluating the file")
+    )]
+    EvalError(#[from] doner_eval::Error),
+    /// Something is wrong with the command arguments.
+    #[error(transparent)]
+    #[diagnostic(
         code(command::io_error),
         help("Check the file path or directory and permissions")
     )]

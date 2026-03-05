@@ -1,9 +1,9 @@
 pub type TokenStream = Vec<TokenKind>;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum TokenKind {
     // Literals
-    Int(i64),
+    Int(f64),
 
     // Operators
     Equals,
